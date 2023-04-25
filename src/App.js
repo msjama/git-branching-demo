@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const menu = [
+    { id: 1, name: "Hamburger", price: "$5.99" },
+    { id: 2, name: "Cheeseburger", price: "$6.99" },
+    { id: 3, name: "French Fries", price: "$3.99" },
+    { id: 4, name: "Onion Rings", price: "$4.99" }
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1>Food Menu</h1>
+      <ul>
+        {menu.map(item => (
+          <li key={item.id}>
+            <span className="name">{item.name}</span>
+            <span className="price">{item.price}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
